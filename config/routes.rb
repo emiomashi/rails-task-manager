@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   post '/tasks', to: 'tasks#create'
   # Defines the root path route ("/")
 
+  get '/tasks/:id', to: 'tasks#show', as: :task
 
+  get 'tasks/:id/edit', to: 'tasks#edit'
+  patch "tasks/:id", to: "tasks#update"
+
+  delete '/tasks/:id', to: 'tasks#destroy'
   # root "articles#index"
 end
